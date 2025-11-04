@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct URLs {
+public struct URLs {
         
-    struct Git {
-        static let base = "https://api.github.com"
+    public struct Git {
+        public static let base = "https://api.github.com"
     }
 }
