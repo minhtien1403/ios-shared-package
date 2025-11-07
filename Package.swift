@@ -22,7 +22,8 @@ let package = Package(
         .target(
             name: "Shared",
             dependencies: [
-                "SnapKit"
+                "SnapKit",
+                "Kingfisher"
             ],
             path: "Sources"
         ),
