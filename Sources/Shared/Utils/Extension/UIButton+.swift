@@ -8,7 +8,7 @@
 import UIKit
 import Combine
 
-extension UIButton {
+public extension UIButton {
     var tapPublisher: AnyPublisher<Void, Never> {
         publisher(for: .touchUpInside)
             .eraseToAnyPublisher()

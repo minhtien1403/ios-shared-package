@@ -8,15 +8,15 @@
 import UIKit
 import Combine
 
-extension UIControl {
+public extension UIControl {
     struct EventPublisher: Publisher {
-        typealias Output = Void
-        typealias Failure = Never
+        public typealias Output = Void
+        public typealias Failure = Never
 
         let control: UIControl
         let event: UIControl.Event
 
-        func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, Void == S.Input {
+        public func receive<S>(subscriber: S) where S : Subscriber, Never == S.Failure, Void == S.Input {
             let subscription = EventSubscription(
                 subscriber: subscriber,
                 control: control,
@@ -38,9 +38,9 @@ extension UIControl {
             control.addTarget(self, action: #selector(eventHandler), for: event)
         }
 
-        func request(_ demand: Subscribers.Demand) {}
+        public func request(_ demand: Subscribers.Demand) {}
 
-        func cancel() {
+        public func cancel() {
             subscriber = nil
         }
 
